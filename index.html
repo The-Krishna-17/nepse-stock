@@ -1190,6 +1190,11 @@
         document.getElementById("chartLoading").style.display = "none";
         buildSymbolList();
         buildTicker();
+        const symbols = Object.keys(RAW_DATA).sort();
+
+        if (symbols.length > 0) {
+          selectSymbol(symbols[0]); // ✅ default = first symbol
+        }
       }
 
       function buildSymbolList() {
